@@ -11,3 +11,7 @@ Learning to adapt pretrained language models to unlabeled, out‑of‑distributi
 The following table reports exact‑match accuracy for our three baselines—Llama‑3.2‑1B‑Instruct, Llama‑3.2‑3B‑Instruct, and DeepSeek‑R1‑Distill‑Qwen‑1.5B—on GSM8K, Math‑500, and AIME1983–2024 using $N=2, 4, 8, 16$ candidate responses. For each $N$, we compare three settings: (1) Base: the frozen model without any Test Time Training; (2) VB (Verifier-Based): where we generate $N$ samples and select the single highest‑scoring response via our verifier; and (3) VDS‑TTT: which fine‑tunes LoRA adapters on all verifier‑selected, high‑confidence pseudo‑labels. 
 
 <img src="./Imgs/table1.png" alt="drawing" width="600" height="400"/>
+
+This Figure illustrates the performance trajectory of the iterative VDS-TTT strategy, where the VDS-TTT procedure is applied multiple iterations to the same model. In this figure, the x-axis denotes the number of iterations (i.e., how many times VDS-TTT has been applied). This iterative process reveals a clear trend: model performance consistently improves with successive iterations—up to a certain point. However, due to inherent model capacity limitations, this iterative improvement eventually exhibits diminishing returns. That is why performance plateaus beyond a certain point, additional iterations result in minor fluctuations rather than continued gains. 
+
+<img src="./Imgs/TTT_TTC.png" alt="drawing" width="600" height="400"/>
