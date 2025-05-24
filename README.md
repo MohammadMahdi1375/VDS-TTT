@@ -7,7 +7,7 @@ Learning to adapt pretrained language models to unlabeled, out‑of‑distributi
 
 <img src="./Imgs/framework.png" alt="drawing" width="1000" height="400"/>
 
-<img src="./Imgs/algorithm.png" alt="drawing" width="600" height="400"/>
+<img src="./Imgs/algorithm.png" alt="drawing" width="600" height="500"/>
 
 ## Results
 The following table reports exact‑match accuracy for our three baselines—Llama‑3.2‑1B‑Instruct, Llama‑3.2‑3B‑Instruct, and DeepSeek‑R1‑Distill‑Qwen‑1.5B—on GSM8K, Math‑500, and AIME1983–2024 using $N=2, 4, 8, 16$ candidate responses. For each $N$, we compare three settings: (1) Base: the frozen model without any Test Time Training; (2) VB (Verifier-Based): where we generate $N$ samples and select the single highest‑scoring response via our verifier; and (3) VDS‑TTT: which fine‑tunes LoRA adapters on all verifier‑selected, high‑confidence pseudo‑labels. 
